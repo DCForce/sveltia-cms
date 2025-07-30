@@ -105,23 +105,7 @@ const generateSchema = async () => {
   await writeFile('package/schema/sveltia-cms.json', schemaString);
 };
 
-/**
- * Generate extra files such as TypeScript type declaration and JSON schema.
- * @returns {import('vite').Plugin} Vite plugin.
- */
-const generateExtraFiles = () => ({
-  name: 'generate-extra-files',
-  apply: 'build',
-  buildStart: {
-    async: true,
-    sequential: false,
-    // eslint-disable-next-line jsdoc/require-jsdoc
-    handler: async () => {
-      await generateTypes();
-      await generateSchema();
-    },
-  },
-});
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
