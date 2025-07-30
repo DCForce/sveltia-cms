@@ -150,7 +150,6 @@ export default defineConfig({
       },
     }),
     copyPackageFiles(),
-    generateExtraFiles(),
   ],
   test: {
     coverage: {
